@@ -1,0 +1,81 @@
+/* Style the text contained in code so not much styling has to be done */
+code {
+  display: block;
+  background-color: red;
+  font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+  border-radius: 6px;
+  color: white;
+  padding: 24px 15px;
+  text-align: center;
+  font-size: 5vw;
+}
+
+/* A template suited for a mobile phone */
+.container {
+  display: grid;
+  grid-template-areas: "header"
+                      "navbar"
+                      "section"
+                      "article1"
+                      "article2"
+                      "article3"
+                      "footer";
+  grid-gap: 20px;
+}
+
+header {
+  grid-area: header;
+}
+
+nav {
+  grid-area: navbar;
+}
+
+section {
+  grid-area: section;
+}
+
+.art1 {
+  grid-area: article1;
+}
+.art2 {
+  grid-area: article2;
+}
+.art3 {
+  grid-area: article3;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/* Change of template for tablets and bigger devices. Also a smaller font. */
+@media (min-width: 480px) {
+  .container {
+    grid-template-areas: "header header header"
+                        "navbar section section"
+                        "article1 article2 article3"
+                        "footer footer footer";
+  }
+
+  code {
+    background-color: blue;
+    font-size: 3vw;
+  }
+}
+
+/* Only change the background colour and font for average desktop resolutions */
+@media (min-width: 1024px) {
+  code {
+    background-color: green;
+    font-size: 2vw;
+  }
+}
+
+/* Increase the padding to make everything more ledgeable on large screens */
+@media (min-width: 1440px) {
+  code {
+    background-color: orange;
+    padding: 40px 15px;
+  }
+}
